@@ -1,0 +1,48 @@
+
+{
+    "plugins": [],
+    "source": {
+        "include": ["./src"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(node_modules/docs)"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    },
+    "opts": {
+        "encoding": "utf8",
+        "destination": "./documentacion",
+        "recurse": true,
+        "readme": "READMEDOC.md",
+        "template": "node_modules/clean-jsdoc-theme",
+        "theme_opts": {
+            "theme": "dark",
+            "title": "Presupuesto semanal",
+            "menu": [
+                {
+                    "title": "Proyecto en GitHub",
+                    "link": "https://github.com/franj1748/manejo-de-presupuesto-con-clases.git",
+                    "target": "_blank"
+                },
+                {
+                    "title": "Archivos de configuración para JSDoc",
+                    "link": "https://github.com/franj1748/configuracion-jsdoc.git",
+                    "target": "_blank"
+                }
+            ],
+            "footer": "Creado por Francisco Elis",
+            "resizeable": {
+                "navbar": {
+                  "min": "300",
+                  "max": "600"
+                }
+            }
+        },
+        "sourceType": "module",
+        "tags": {
+            "allowUnknownTags": false,
+            "dictionaries": ["jsdoc","closure"]
+        }
+    }
+}

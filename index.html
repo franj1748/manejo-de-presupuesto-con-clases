@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Cálculo de presupuesto semanal</title>
+</head>
+<body>
+    <div class="row mx-0 text-center p-5 text-white">
+        <h1><strong>Presupuesto semanal</strong></h1>
+    </div>
+    <div class="container p-4 bg-white rounded-bottom shadow-lg mb-5">
+        <div class="row g-5">
+            <div class="col-md-4 col-lg-5 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-dark">Cálculo de presupuesto</span>
+                    <button id="iniciarPresupuesto" class="btn btn-primary">Iniciar</button>
+                </h4>
+                <div id="presupuestoInicial" class="alert alert-primary d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                    <div>
+                        Presupuesto: $<span id="presupuestoTotal"></span><!-- Aquí se agrega el presupuesto con JS -->
+                    </div>
+                </div>
+                <div id="restanteInicial" class="alert alert-success d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                    <div>
+                        Restante: $<span id="restante"></span><!-- Aquí se agrega el restante con JS -->
+                    </div>
+                </div>
+                <ul id="listaGastos" class="list-group mb-3">
+                    <!-- Aquí se agregan los gastos dinamicamente con JS -->
+                </ul>
+                <svg style="display: none;">
+                    <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                    </symbol>
+                </svg>
+            </div>
+            <div class="col-md-8 col-lg-7">
+                <h4 class="mb-3">Añadir Gastos</h4>
+                <form id="formulario" class="needs-validation" novalidate>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" placeholder="Ingresa el tipo de gasto" id="nombreGasto" required></input>
+                        <div id="errorNombreGasto" class="invalid-feedback">
+                            Este campo no puede estar vacío.
+                        </div>                 
+                        <label for="floatingTextarea">Tipo de gasto</label>
+                    </div>
+                    <div class="form-floating">
+                        <input id="cantidadGasto" class="form-control mt-3" type="text" placeholder="Ingresa la cantidad" required>
+                        <div id="errorCantidadGasto" class="invalid-feedback">
+                            Este campo no puede estar vacío.
+                        </div> 
+                        <label for="floatingTextarea">Cantidad en $</label>
+                    </div>
+                    <hr class="my-4">
+                    <button id="agregarGasto" class="w-100 btn btn-primary btn-lg" type="submit">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="src/js/class.js"></script>
+    <script src="src/js/functions.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
